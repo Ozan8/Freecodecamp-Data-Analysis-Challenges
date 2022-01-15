@@ -20,8 +20,12 @@ def calculate_demographic_data(print_data=True):
     # What percentage of people without advanced education make more than 50K?
 
     # with and without `Bachelors`, `Masters`, or `Doctorate`
-    higher_education = df.loc[(df["education"].str.startswith("B")) | (df["education"].str.startswith("M")) | (df["education"].str.startswith("D"))][df["salary"] == ">50K"]
-    higher_education2 = df.loc[(df["education"].str.startswith("B")) | (df["education"].str.startswith("M")) | (df["education"].str.startswith("D"))]
+    higher_education = df.loc[(df["education"].str.startswith("B")) |
+                              (df["education"].str.startswith("M")) |
+                              (df["education"].str.startswith("D"))][df["salary"] == ">50K"]
+    higher_education2 = df.loc[(df["education"].str.startswith("B")) |
+                               (df["education"].str.startswith("M")) |
+                               (df["education"].str.startswith("D"))]
     lower_education = df.loc[df["salary"] == ">50K"]
     lower_education = len(lower_education) - len(higher_education)
 
